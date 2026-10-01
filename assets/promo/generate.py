@@ -293,7 +293,7 @@ def scene_whoami(fr, t):
     a = ease(prog(t, 0, 8))
     fr.text(MX, 62, "WHOAMI", 10, fade(FAINT, a), "mono_m", spacing=3.2)
     # name: wipe in
-    name = "Faruk Ömer Ballı"
+    name = "Omer Faruk Balli"
     k = ease(prog(t, 4, 20))
     if k > 0:
         nw = tw(name, 56, "display")
@@ -311,20 +311,16 @@ def scene_whoami(fr, t):
     if t >= 30:
         fr.rich(MX, 182, [("Not an engineer ", HEAD), (":)", ACC), (" — just someone who loves to build things.", HEAD)],
                 19, "sans", limit=int((t - 30) * 2.4))
-    if t >= 58:
-        fr.rich(MX, 212, [("Think like an architect: draw the whole picture first, then lay the bricks.", MUTED)],
-                14.5, "sans", limit=int((t - 58) * 3.0))
     rows = [
-        ("role", "solution architect at heart"),
         ("builds", "platforms · pipelines · lakehouses"),
         ("stack", "kubernetes · kafka · iceberg · argocd"),
         ("rule", "do it twice by hand, the third time it ships as code"),
     ]
     for i, (k_, v) in enumerate(rows):
-        ra = ease(prog(t, 84 + i * 6, 8))
+        ra = ease(prog(t, 62 + i * 6, 8))
         if ra <= 0:
             continue
-        y = 258 + i * 25 + (1 - ra) * 6
+        y = 238 + i * 25 + (1 - ra) * 6
         fr.text(MX, y, k_, 12, fade(FAINT, ra), "mono")
         fr.text(MX + 82, y, v, 12, fade(BODY, ra), "mono")
     # mark, right side
