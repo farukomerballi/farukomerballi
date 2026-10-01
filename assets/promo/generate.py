@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-farukomerballi — terminal profile promo.
+oballi — terminal profile promo.
 
 Renders `terminal.gif`: a looping terminal session that connects, answers
 `whoami`, makes one joke, applies an architecture, syncs an idea to production
@@ -248,13 +248,13 @@ def prompt(fr, y, cmd, t, start, cps=1.5, cursor=True, size=15):
 
 
 def scene_ssh(fr, t):
-    cmd = "ssh omer@farukomerballi"
+    cmd = "ssh omer@oballi"
     done = prompt(fr, 70, cmd, t, 8, 1.3, cursor=t < 32)
     y = 104
     if t >= 32:
         spin = "|/-\\"[int(t / 2) % 4]
         if t < 46:
-            fr.rich(MX + 20, y, [(spin + "  ", ACC), ("connecting to farukomerballi:22", FAINT)], 13)
+            fr.rich(MX + 20, y, [(spin + "  ", ACC), ("connecting to oballi:22", FAINT)], 13)
         else:
             fr.rich(MX + 20, y, [("✓  ", ACC), ("authenticated", BODY), ("  ·  ed25519", FAINT)], 13)
     if t >= 50:
@@ -493,15 +493,15 @@ def scene_exit(fr, t):
         draw_cube(fr, W / 2, 150, 44, ck, ACC, ACC, glow=0.55, face=face)
     a = ease(prog(t, 26, 12))
     if a > 0:
-        fr.text(W / 2, 240, "farukomerballi", 32, fade(HEAD, a), "display", anchor="mm", glow=0.25 * a)
+        fr.text(W / 2, 240, "oballi", 34, fade(HEAD, a), "display", anchor="mm", glow=0.25 * a)
     b = ease(prog(t, 34, 12))
     if b > 0:
         fr.text(W / 2, 278, "builder  ·  solution architect at heart", 12.5, fade(MUTED, b), "mono", anchor="mm")
     c = ease(prog(t, 42, 12))
     if c > 0:
-        segs = [("github.com/", FAINT), ("farukomerballi", BODY), ("   ·   ", LINE),
-                ("linkedin.com/in/", FAINT), ("omerfarukballi", BODY), ("   ·   ", LINE),
-                ("x.com/", FAINT), ("farukomerballi", BODY)]
+        segs = [("github.com/", FAINT), ("oballi", BODY), ("   ·   ", LINE),
+                ("linkedin.com/in/", FAINT), ("oballi", BODY), ("   ·   ", LINE),
+                ("x.com/", FAINT), ("oballii", BODY)]
         fr.rich(W / 2 - tw("".join(s_ for s_, _ in segs), 11.5) / 2, 312, segs, 11.5, alpha=c)
 
 
@@ -532,7 +532,7 @@ def status_bar(fr, idx):
         col = HEAD if i == idx else FAINT
         fr.text(x, (y0 + y1) / 2, label, 11, col, "mono_m" if i == idx else "mono", anchor="lm")
         x += tw(label, 11) + 16
-    right = "github.com/farukomerballi"
+    right = "github.com/oballi"
     rw = tw(right, 11)
     fr.dot(W - 18 - rw - 12, (y0 + y1) / 2, 2.6, ACC)
     fr.text(W - 18 - rw, (y0 + y1) / 2, right, 11, MUTED, anchor="lm")
