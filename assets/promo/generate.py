@@ -499,9 +499,10 @@ def scene_exit(fr, t):
         fr.text(W / 2, 278, "builder  ·  solution architect at heart", 12.5, fade(MUTED, b), "mono", anchor="mm")
     c = ease(prog(t, 42, 12))
     if c > 0:
-        fr.rich(W / 2 - tw("github.com/farukomerballi    linkedin.com/in/farukomerballi", 11.5) / 2, 312,
-                [("github.com/", FAINT), ("farukomerballi", BODY), ("    linkedin.com/in/", FAINT), ("farukomerballi", BODY)],
-                11.5, alpha=c)
+        segs = [("github.com/", FAINT), ("farukomerballi", BODY), ("   ·   ", LINE),
+                ("linkedin.com/in/", FAINT), ("omerfarukballi", BODY), ("   ·   ", LINE),
+                ("x.com/", FAINT), ("farukomerballi", BODY)]
+        fr.rich(W / 2 - tw("".join(s_ for s_, _ in segs), 11.5) / 2, 312, segs, 11.5, alpha=c)
 
 
 SCENES = [
